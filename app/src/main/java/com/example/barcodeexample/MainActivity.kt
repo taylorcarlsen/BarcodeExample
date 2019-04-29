@@ -50,9 +50,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-        btnButton.setOnClickListener()
-        {
-            setContentView(R.layout.second_screen)
+        btnButton.setOnClickListener(){
+            if(tvBarcode != null) {
+
+                setContentView(R.layout.second_screen)
+            }
         }
 
         cameraSource = CameraSource.Builder(this, detector).setRequestedPreviewSize(1024, 768)

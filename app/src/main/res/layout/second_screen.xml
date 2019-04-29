@@ -6,7 +6,82 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
     <TextView
+        android:id="@+id/tvEnterItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello"/>
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:text="Enter Item"/>
+    <TextView
+        android:id="@+id/tvItem"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:text="test"
+        android:layout_below="@+id/tvEnterItem"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"/>
+    <TextView
+            android:id="@+id/lblEnterBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/tvItem"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:text="Enter Base Quantity"/>
+    <EditText
+            android:id="@+id/txtEditBase"
+            android:layout_width="250dp"
+            android:layout_height="25dp"
+            android:text="test"
+            android:layout_below="@+id/lblEnterBase"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:textAlignment="center"/>
+    <TextView
+            android:id="@+id/tvEnterDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtEditBase"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:text="Enter Description"/>
+    <EditText
+            android:id="@+id/txtEditDescription"
+            android:layout_width="250dp"
+            android:layout_height="25dp"
+            android:text="test"
+            android:layout_below="@+id/tvEnterDescription"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:textAlignment="center"/>
+    <TextView
+            android:id="@+id/tvEnterCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtEditDescription"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:text="Pick a Category"/>
+    <Spinner
+            android:id="@+id/spCategory"
+            android:layout_width="250dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/tvEnterCategory"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:textAlignment="center"/>
+    <Resources>
+        <string-array android:name="categories_array">
+            <item>Test Item</item>
+        </string-array>
+    </Resources>
 </RelativeLayout>
