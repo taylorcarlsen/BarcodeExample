@@ -50,7 +50,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-        btnButton.setOnClickListener(){
+
+            btnButton.setOnClickListener(){
             if(tvBarcode != null) {
 
                 setContentView(R.layout.second_screen)
