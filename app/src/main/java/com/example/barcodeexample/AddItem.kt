@@ -17,6 +17,7 @@ import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
 import com.google.android.gms.vision.barcode.Barcode
 import com.google.android.gms.vision.barcode.BarcodeDetector
+import kotlinx.android.synthetic.main.second_screen.*
 import java.util.jar.Manifest
 
 class AddItem : AppCompatActivity() {
@@ -24,6 +25,8 @@ class AddItem : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.second_screen)
+        var itemCode: String = intent.getStringExtra("ItemCode")
+        tvItem.text = itemCode
     }
 
 }
