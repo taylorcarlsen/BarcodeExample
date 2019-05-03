@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.view.SurfaceHolder
@@ -17,12 +18,19 @@ import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
 import com.google.android.gms.vision.barcode.Barcode
 import com.google.android.gms.vision.barcode.BarcodeDetector
+import kotlinx.android.parcel.Parcelize
 import java.util.jar.Manifest
 
+@Parcelize
+data class MyItem(
+    val item: CharSequence = tvBarcode.text
+) :Parcelable
+
+private lateinit var tvBarcode: TextView
+
 class MainActivity : AppCompatActivity() {
-//test commit
+
     private lateinit var svBarcode: SurfaceView
-    private lateinit var tvBarcode: TextView
 
     private lateinit var detector: BarcodeDetector
     private lateinit var cameraSource: CameraSource
@@ -51,10 +59,13 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-            btnButton.setOnClickListener(){
+            btnButton.setOnClickListener{
             if(tvBarcode != null) {
 
-                setContentView(R.layout.second_screen)
+                val myItem = MyItem();
+                val intent = Intent(this, AddItem::class.java)
+                intent.putExtra("myitem", myItem)
+                startActivity(intent)
             }
         }
 
