@@ -20,7 +20,7 @@ import com.google.android.gms.vision.barcode.BarcodeDetector
 import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
-
+//test commit
     private lateinit var svBarcode: SurfaceView
     private lateinit var tvBarcode: TextView
 
