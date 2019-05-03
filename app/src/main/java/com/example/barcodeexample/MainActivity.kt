@@ -23,10 +23,9 @@ import java.util.jar.Manifest
 
 @Parcelize
 data class MyItem(
-    val item: CharSequence = tvBarcode.text
+    //val item: CharSequence = tvBarcode.text
+    val item: String = "If this works it works"
 ) :Parcelable
-
-private lateinit var tvBarcode: TextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var cameraSource: CameraSource
 
     private lateinit var btnButton: Button
+    private lateinit var tvBarcode: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             btnButton.setOnClickListener{
             if(tvBarcode != null) {
 
-                val myItem = MyItem();
+                val myItem = MyItem()
                 val intent = Intent(this, AddItem::class.java)
                 intent.putExtra("myitem", myItem)
                 startActivity(intent)

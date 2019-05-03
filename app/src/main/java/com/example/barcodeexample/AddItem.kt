@@ -28,12 +28,15 @@ class AddItem : AppCompatActivity() {
 
         val bundle : Bundle? = intent.extras
 
-        bundle?.apply {
-            val myItem: MyItem? = getParcelable("myitem")
-            if(myItem != null){
-                tvItem.text = myItem.item
+        bundle?.let {
+            bundle.apply {
+                val myItem: MyItem? = getParcelable("myitem")
+                if(myItem != null){
+                    tvItem.text = myItem.item
+                }
             }
         }
+
     }
 
 }
