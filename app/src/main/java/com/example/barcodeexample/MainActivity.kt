@@ -21,11 +21,11 @@ import com.google.android.gms.vision.barcode.BarcodeDetector
 import kotlinx.android.parcel.Parcelize
 import java.util.jar.Manifest
 
-@Parcelize
+/*@Parcelize
 data class MyItem(
     //val item: CharSequence = tvBarcode.text
     val myitem: String = "If this works it works"
-) :Parcelable
+) :Parcelable*/
 
 class MainActivity : AppCompatActivity() {
 
@@ -60,10 +60,8 @@ class MainActivity : AppCompatActivity() {
         })
 
             btnButton.setOnClickListener{
-
-                val myItem = MyItem()
                 val intent = Intent(this, AddItem::class.java)
-                intent.putExtra("myitem", myItem)
+                intent.putExtra("myitem", "testing this passes value")
                 startActivity(intent)
         }
 
